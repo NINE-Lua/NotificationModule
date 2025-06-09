@@ -99,7 +99,9 @@ local function showNotification(duration)
     createNotification(notificationTitle, notificationMessage, duration)
 end
 local function GetCodeFrom()
-        local GCF = "Get notification code from https://github.com/NINE-Lua/NotificationModule/edit/main/NM.lua"
+        local GCF = "Get notification code from https://github.com/NINE-Lua/NotificationModule/blob/main/NM.lua"
+        local LHTU = "Learn how to use the code from https://github.com/NINE-Lua/NotificationModule/blob/main/NMReadMe.lua"
         print(GCF)
+        print(LHTU)
 end
 GetCodeFrom()
