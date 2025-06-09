@@ -1,3 +1,7 @@
+--[[
+        Put this code infront of your script. It will not work otherwise.
+]]--
+
 local notificationTitle = nil
 local notificationMessage = nil
 local activeNotifications = {}
