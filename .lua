@@ -1,6 +1,7 @@
 local notificationTitle = nil
 local notificationMessage = nil
 local activeNotifications = {}
+
 local function createNotification(title, message, duration)
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -20,7 +21,7 @@ local function createNotification(title, message, duration)
     TitleLabel.Size = UDim2.new(1, -10, 0, 20)
     TitleLabel.Position = UDim2.new(0, 5, 0, 5)
     TitleLabel.BackgroundTransparency = 1
-    TitleLabel.Text = title
+    TitleLabel.Text = title or "Notification"
     TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TitleLabel.TextScaled = true
     TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -31,7 +32,7 @@ local function createNotification(title, message, duration)
     MessageLabel.Size = UDim2.new(1, -10, 0, 50)
     MessageLabel.Position = UDim2.new(0, 5, 0, 25)
     MessageLabel.BackgroundTransparency = 1
-    MessageLabel.Text = message
+    MessageLabel.Text = message or "No message provided"
     MessageLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
     MessageLabel.TextScaled = true
     MessageLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -88,5 +89,8 @@ local function createNotification(title, message, duration)
     updatePositions()
 end
 local function showNotification(duration)
+    if duration <= 0 then
+        duration = 2.5
+    end
     createNotification(notificationTitle, notificationMessage, duration)
 end
