@@ -98,3 +98,7 @@ local function showNotification(duration)
     end
     createNotification(notificationTitle, notificationMessage, duration)
 end
+
+--[[
+        Get code from https://github.com/NINE-Lua/NotificationModule/edit/main/NM.lua :)
+]]--
